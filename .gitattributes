@@ -1,0 +1,21 @@
+# Автоопределение текстовых файлов
+* text=auto
+
+# Java, Markdown, CSV, DOT — всегда LF
+*.java   text eol=lf
+*.md     text eol=lf
+*.csv    text eol=lf
+*.dot    text eol=lf
+
+# Shell-скрипты — всегда LF (иначе не запустятся на Linux/macOS)
+*.sh     text eol=lf
+
+# Windows-скрипты — всегда CRLF
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+
+# Бинарные файлы — не трогать
+*.png    binary
+*.jpg    binary
+*.jar    binary
+*.class  binary
