@@ -1,0 +1,10 @@
+digraph C {
+graph [rankdir=TB, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.4];
+node [shape=record, style="filled", fontname="Times New Roman", fontsize=10, color="#2F5597", fillcolor="#F7FBFF"];
+edge [fontname="Times New Roman", fontsize=9, color="#555555"];
+w [label="{Warehouse\nTODO|- items Map[String,StockItem]\l- movements List[StockMovement]\l|+ receive(String,int)\l+ issue(String,int)\l+ findByCategory(Category) List\l+ totalsByCategory() Map\l}", fillcolor="#FDE9E7", color="#C00000"];
+i [label="{StockItem\nTODO|- code String\l- name String\l- category Category\l- quantity int\l|+ increase(int)\l+ decrease(int)\l}", fillcolor="#FDE9E7", color="#C00000"];
+m [label="{StockMovement|- itemCode String\l- type MovementType\l- quantity int\l|+ StockMovement(...)\l}", fillcolor="#F7FBFF", color="#2F5597"];
+w -> i [label="0..*",arrowtail=diamond,dir=both];
+w -> m [label="0..*",arrowtail=diamond,dir=both];
+}
