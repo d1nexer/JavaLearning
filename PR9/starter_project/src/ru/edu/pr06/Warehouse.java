@@ -75,4 +75,16 @@ public class Warehouse {
     public List<StockMovement> getMovements() {
         return Collections.unmodifiableList(movements);
     }
+
+    public Set<Category> getActiveCategories() {
+        Set<Category> categories = EnumSet.noneOf(Category.class);
+        for (StockItem item : items.values()) {
+            categories.add(item.getCategory());
+        }
+        return Collections.unmodifiableSet(categories);
+    }
+
+    public Set<String> getAllItemCodes() {
+        return Collections.unmodifiableSet(new HashSet<>(items.keySet()));
+    }
 }
