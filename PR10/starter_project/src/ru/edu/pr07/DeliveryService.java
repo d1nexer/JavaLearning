@@ -1,0 +1,1 @@
+package ru.edu.pr07; public class DeliveryService { private final DeliveryPolicyFactory factory; public DeliveryService(DeliveryPolicyFactory f){factory=f;} public double calculate(DeliveryRequest r){ DeliveryPolicy p=factory.get(r.type()); if(!p.supports(r)) throw new IllegalArgumentException("Unsupported delivery"); return p.calculateCost(r); } }
