@@ -1,0 +1,8 @@
+digraph C {
+graph [rankdir=TB, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.4];
+node [shape=record, style="filled", fontname="Times New Roman", fontsize=10, color="#2F5597", fillcolor="#F7FBFF"];
+edge [fontname="Times New Roman", fontsize=9, color="#555555"];
+a [label="{SalesAnalyticsService\nTODO||+ topSales(List,int) List\l+ maxSale(List) Optional[Sale]\l+ totalsByManager(List) Map\l+ averageByRegion(List,String) double\l}", fillcolor="#FDE9E7", color="#C00000"];
+s [label="{Sale|- id String\l- manager String\l- region String\l- amount double\l|+ getters\l}", fillcolor="#F7FBFF", color="#2F5597"];
+a -> s [label="processes 0..*",style=dashed,arrowhead=open];
+}
